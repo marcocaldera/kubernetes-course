@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: second-app-backend
+
+spec:
+  selector:
+    app: second-app
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 8080 # port of the container
+  type: LoadBalancer
